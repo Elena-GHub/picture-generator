@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "parcel": "^1.12.4"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
   }
 }
