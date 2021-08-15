@@ -22,7 +22,9 @@
   </head>
 
   <body>
-    <h1>We will be building a picture generator for Instagram</h1>
+    <div class="container">
+      <h1 class="title"></h1>
+    </div>
   </body>
 
   <script>
@@ -45,8 +47,26 @@
       ["#d2302c", "#f7f7f9"],
     ];
 
+    const container = document.querySelector(".container");
+    const title = document.querySelector(".title");
+
     function getRandombetweenMinMax(min, max) {
       return Math.floor(Math.random() * (max - min) + min);
     }
+
+    function assignText(message="Don't miss this adventure") {
+      const words = message.split(' ');
+      const groupedWords = [];
+
+      while (words.length > 0) {
+        const separation = getRandombetweenMinMax(1, words.length);
+        groupedWords.push(words.splice(0, separation));
+      }
+      title.innerHTML = groupedWords.map((group) => {
+        return `<span class="textSegment">${group.join(' ')}</span>`
+      })
+      .join("");
+    }
+    assignText();
   </script>
 </html>
