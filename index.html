@@ -102,6 +102,17 @@
         .join("");
     }
 
+    function assignStyles() {
+      const colors = getColors();
+
+      document.querySelectorAll(".textSegment").forEach((segment) => {
+        segment.style.backgroundColor = colors.backdropColor;
+      });
+
+      title.style.color = colors.fontColor;
+    }
+
     assignText();
+    assignStyles();
   </script>
 </html>
