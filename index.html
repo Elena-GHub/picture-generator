@@ -22,6 +22,7 @@
       .container {
         position: absolute;
         padding: 2rem;
+        max-width: 30%;
       }
 
       .title {
@@ -112,7 +113,26 @@
       title.style.color = colors.fontColor;
     }
 
+    function setContainerPosition() {
+      const containerPositions = [
+        { top: "2rem", left: "2rem" },
+        { top: "2rem", right: "2rem" },
+        { bottom: "2rem", left: "2rem" },
+        { bottom: "2rem", right: "2rem" },
+      ];
+
+      const position =
+        containerPositions[
+          getRandombetweenMinMax(0, containerPositions.length)
+        ];
+
+      Object.keys(position).forEach((key) => {
+        container.style[key] = position[key];
+      });
+    }
+
     assignText();
     assignStyles();
+    setContainerPosition();
   </script>
 </html>
