@@ -129,6 +129,11 @@
       Object.keys(position).forEach((key) => {
         container.style[key] = position[key];
       });
+
+      container.style.transform = `rotate(${getRandombetweenMinMax(
+        -10,
+        10
+      )}deg)`;
     }
 
     assignText();
